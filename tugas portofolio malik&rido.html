@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portofolio | Siswa TKJ</title>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    body {
+      background: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #2563eb, #38bdf8);
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+    }
+    header p {
+      margin-top: 10px;
+      font-size: 1.1rem;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      background: #020617;
+      padding: 10px;
+      position: sticky;
+      top: 0;
+    }
+    nav a {
+      color: #e5e7eb;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #38bdf8;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      color: #38bdf8;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #38bdf8;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    .card {
+      background: #020617;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(56,189,248,0.2);
+    }
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+    }
+    .skill-item {
+      background: #020617;
+      padding: 15px;
+      text-align: center;
+      border-radius: 8px;
+      border: 1px solid #38bdf8;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #020617;
+      margin-top: 40px;
+    }
+    button {
+      background: #38bdf8;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #2563eb;
+      color: rgb(255, 255, 255);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Ahmad Maliky&Afrido</h1>
+    <img src="https://smkn36jakarta.sch.id/wp-content/uploads/2024/07/cropped-smkn-36-jakarta-logo-2.png"width="200" alt="">
+    <p>Siswa SMKN 36 Jakarta | Teknik Komputer & Jaringan</p>
+  </header>
+
+  <nav>
+    <a href="#about">Tentang Kami</a>
+    <a href="#skills">Skill</a>
+    <a href="#projects">Projek</a>
+    <a href="#contact">Kontak</a>
+  </nav>
+
+  <section id="about">
+    <h2>Tentang Kami</h2>
+    <div class="card">
+      <p>
+        Kami adalah siswa SMKN 36 Jakarta jurusan Teknik Komputer dan Jaringan (TKJ).
+        Kami tertarik di bidang IT Support, jaringan komputer, dan troubleshooting.
+        kami suka belajar hal baru tentang teknologi dan ingin bekerja di bidang IT.
+      </p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skill</h2>
+    <div class="skills">
+      <div class="skill-item">Instalasi Windows</div>
+      <div class="skill-item">Merakit PC</div>
+      <div class="skill-item">Dasar Jaringan</div>
+      <div class="skill-item">Crimping Kabel LAN</div>
+      <div class="skill-item">Membuat Topologi Jaringan</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projek</h2>
+    <div class="card">
+      <h3>🔧 Mengkrimping Kabel Lan</h3>
+      <p>Membuat dan Mengkrimping kabel lan seperti kabel straight dan kabel cross.</p>
+    </div>
+    <div class="card">
+      <h3>💻 Membuat dan mengkonfigurasi jaringan</h3>
+      <p>Melakukan konfigurasi jaringan di Cisco packet tracer serta kami juga membuat vlan 30.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Kontak</h2>
+    <div class="card">
+      <p>Email: PelajarPancasila@gmail.com</p>
+      <p>WhatsApp: 0895-3678-889</p>
+      <br>
+      <button onclick="alert('Terima kasih sudah melihat portofolio Kami!')">
+        Klik Disini 
+      </button>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 - Portofolio Siswa TKJ</p>
+  </footer>
+
+</body>
+</html>
