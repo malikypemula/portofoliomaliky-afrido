@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portofolio Siswa TKJ</title>
+
+<style>
+:root {
+    --primary: #7f00ff;
+    --secondary: #00c6ff;
+    --accent: #ff6a00;
+    --pink: #ff4ecd;
+    --bg: linear-gradient(120deg, #f6d365, #fda085);
+    --card: #ffffff;
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: #333;
+    min-height: 100vh;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, var(--primary), var(--secondary), var(--pink));
+    color: #fff;
+    padding: 1.5rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-top: 10px;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: var(--accent);
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* SECTION */
+section {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(255,255,255,0.95);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    animation: fadeUp 1s ease;
+}
+
+@keyframes fadeUp {
+    from {opacity: 0; transform: translateY(40px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+/* ABOUT */
+#about {
+    text-align: center;
+}
+
+.profile-pic {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin-top: 1rem;
+    border: 6px solid var(--pink);
+    transition: 0.4s;
+    object-fit: cover; /* Menjaga proporsi gambar tanpa gepeng */
+}
+
+.profile-pic:hover {
+    transform: rotate(-5deg) scale(1.15);
+    box-shadow: 0 0 30px var(--pink), 0 0 60px var(--secondary);
+}
+
+/* SKILLS */
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill {
+    padding: 1.5rem;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #a8edea, #fed6e3);
+    text-align: center;
+    transition: 0.4s;
+}
+
+.skill:nth-child(2) {
+    background: linear-gradient(135deg, #d299c2, #fef9d7);
+}
+
+.skill:nth-child(3) {
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+}
+
+.skill:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.skill h3 {
+    color: #000;
+    margin-bottom: 0.5rem;
+}
+
+/* PROJECTS */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.project {
+    padding: 2.2rem;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #84fab0, #8fd3f4);
+    transition: 0.4s;
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project .btn {
+    margin-right: 8px;
+    margin-top: 12px;
+}
+
+
+.project:nth-child(2) {
+    background: linear-gradient(135deg, #fccb90, #d57eeb);
+}
+
+.project:nth-child(3) {
+    background: linear-gradient(135deg, #f6d365, #fda085);
+}
+
+.project:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.project h3 {
+    color: #000;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, var(--accent), var(--pink));
+    color: #fff;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 20px var(--accent);
+}
+
+.btn:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* CONTACT */
+#contact-form {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    margin-bottom: 1rem;
+    padding: 12px;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    background: #f5f5f5;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: #fff;
+}
+
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 30px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+button:hover {
+    background: #ff7b00;
+    transform: scale(1.05);
+}
+
+button:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* ALERT */
+#notif {
+    display: none;
+    text-align: center;
+    margin-top: 1rem;
+    color: green;
+    font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 1.2rem;
+    background: linear-gradient(135deg, #000428, #004e92);
+    color: #fff;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Portofolio Muhammad Iqbal Al-Farizi</h1>
+    <nav>
+        <ul>
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#skills">Keahlian</a></li>
+            <li><a href="#projects">Proyek</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="about">
+    <h2>Tentang Saya</h2>
+    <p>Saya adalah seorang pelajar yang memiliki minat di bidang teknologi dan komputer. Saya sangat senang mempelajari hal-hal baru, apalagi yang berkaitan dengan perkembangan teknologi. Hal itu meningkatkan rasa ingin tahu saya dan saya berusaha untuk mengembangkan kemampuan dan wawasan saya terkait perkembangan teknologi.</p>
+    <img src="WhatsApp Image 2026-02-09 at 18.31.19.jpeg" class="profile-pic">
+</section>
+
+<section id="skills">
+    <h2>Keahlian Saya</h2>
+    <div class="skill-grid">
+        <div class="skill">
+            <h3>Membuat Topologi Jaringan</h3>
+            <p>memiliki keahlian dasar penggunaan Cisco Packet Trasher untuk merancang dan mensimulasikan jaringan komputer, saya mampu membuat topologi jaringan sederhana dan melakukan konfigurasi IP Address</p>
+        </div>
+        <div class="skill">
+            <h3>HTML & CSS</h3>
+            <p>Memiliki pemahaman dasar tentang HTML dan CSS yang saya pelajari secara mandiri melalui berbagai tutorial dari AI dan Youtube. Dengan kemampuan dasar tersebut, saya dapat membuat halaman web sederhana serta mengatur tampilan warna agar terlihat agar menarik.</p>
+        </div>
+        <div class="skill">
+            <h3>Perakitan Komputer</h3>
+            <p>Memiliki keahlian dasar dalam perakitan komputer, mengenal jenis komponen komputer</p>
+        </div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Project yang sudah saya buat</h2>
+    <p>Project yang sudah saya buat ini merupakan tugas sekolah yang sudah saya buat, adapun beberapa project yang saya buat itu merupakan eksperimen dengan melihat Youtube ataupun AI</p>
+    <div class="project-grid">
+        <div class="project">
+            <h3>Website Sederhana</h3>
+            <p>Website statis HTML & CSS.</p>
+            <a href="Belajarday1.html" class="btn">Lihat</a>
+            <a href="web.html" class="btn">Lihat</a>
+        </div>
+        <div class="project">
+            <h3>Topologi Jaringan</h3>
+            <p>Simulasi Cisco Packet Tracer.</p>
+            <a href="WhatsApp Image 2026-02-09 at 14.25.40.jpeg" class="btn">Lihat</a>
+            <a href="WhatsApp Image 2026-02-09 at 19.39.50.jpeg" class="btn">Lihat</a>
+        </div>
+        <div class="project">
+            <h3>Membuat Database di MYSQL</h3>
+            <p>Membuat database dan mengelolanya </p>
+            <a href="WhatsApp Image 2026-02-09 at 20.06.20.jpeg" class="btn">Lihat</a>
+            <a href="WhatsApp Image 2026-02-09 at 20.06.20 (1).jpeg" class="btn">Lihat</a>
+            <a href="WhatsApp Image 2026-02-09 at 20.06.21.jpeg" class="btn">Lihat</a>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Kontak</h2>
+    <form id="contact-form">
+        <input type="text" placeholder="Nama" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Pesan" required></textarea>
+        <button type="submit">Kirim</button>
+        <div id="notif">✅ Pesan berhasil dikirim!</div>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2026 Portofolio M. Iqbal Al-Farizi</p>
+</footer>
+
+<script>
+document.getElementById("contact-form").addEventListener("submit", function(e){
+    e.preventDefault();
+    document.getElementById("notif").style.display = "block";
+    this.reset();
+});
+</script>
+
+</body>
+</html>
